@@ -1,0 +1,7 @@
+{
+  "name": "Brave DevContainer",
+  "image": "lscr.io/linuxserver/brave:latest",
+  "forwardPorts": [3000, 3001],
+  "runArgs": ["--shm-size=1gb"],
+  "workspaceFolder": "/workspace"
+}
