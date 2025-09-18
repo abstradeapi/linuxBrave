@@ -9,5 +9,5 @@
     3001
   ],
   "postCreateCommand": "echo 'Docker ready, building environment...'",
-  "postStartCommand": "docker run --rm -d --name brave -e PASSWORD=mysecret -p 3000:3000 -p 3001:3001 --shm-size=1gb lscr.io/linuxserver/brave:latest"
+  "postStartCommand": "docker run --rm -d --name brave -p 3000:3000 -p 3001:3001 --shm-size=1gb lscr.io/linuxserver/brave:latest"
 }
