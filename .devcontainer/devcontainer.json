@@ -1,7 +1,14 @@
 {
-  "name": "Brave DevContainer",
-  "image": "lscr.io/linuxserver/brave:latest",
-  "forwardPorts": [3000, 3001],
-  "runArgs": ["--shm-size=1gb"],
-  "workspaceFolder": "/workspace"
+  "name": "Brave Browser Codespace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    // Gives us Docker-in-Docker so we can run containers inside Codespaces
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [
+    3000,
+    3001
+  ],
+  "postCreateCommand": "echo 'Docker ready, building environment...'",
+  "postStartCommand": "docker run --rm -d --name brave -e PASSWORD=mysecret -p 3000:3000 -p 3001:3001 --shm-size=1gb lscr.io/linuxserver/brave:latest"
 }
