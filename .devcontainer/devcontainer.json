@@ -2,7 +2,6 @@
   "name": "Brave Browser Codespace",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    // Gives us Docker-in-Docker so we can run containers inside Codespaces
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
   "forwardPorts": [
